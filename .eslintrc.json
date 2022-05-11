@@ -40,11 +40,6 @@
       "error"
     ],
     "react/react-in-jsx-scope": "off",
-    "settings": {
-      "import/resolver": {
-        "typescript": {}
-      }
-    },
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -53,5 +48,10 @@
         "tsx": "never"
       }
    ]
-  }
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
 }
