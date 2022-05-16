@@ -33,7 +33,7 @@ const SignIn = () => {
     <Container>
       <Content>
         <img src={logoImg} alt="GoBarber" />
-        <Form onSubmit={handleSubmit} ref={formRef}>
+        <Form onSubmit={handleSubmit} ref={formRef} autoComplete="off">
           <h1>Faça seu logon</h1>
           <Input icon={FiMail} type="text" placeholder='email' name='email' />
           <Input icon={FiLock} type="password" placeholder='Senha' name='password' />

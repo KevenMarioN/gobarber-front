@@ -32,7 +32,8 @@ const Input =  ({icon : Icon,name,...rest} : InputProps) : JSX.Element  => {
   return (
     <Container isErrored={!!error} isFocused={IsFocused} IsFilled={IsFilled}>
    {Icon &&  <Icon name={name}/>}
-    <input 
+    <input
+     autoComplete="nope"
     onFocus={handleInputFocus}
     onBlur={handleInputBlur}
     defaultValue={defaultValue}

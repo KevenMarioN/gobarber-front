@@ -37,7 +37,7 @@ const SignUp = () => {
       <Background />
       <Content>
         <img src={logoImg} alt="GoBarber" />
-        <Form ref={formRef} initialData={{ name: '', email: '', password: '' }} onSubmit={handleSubmit}>
+        <Form autoComplete="off" ref={formRef} initialData={{ name: '', email: '', password: '' }} onSubmit={handleSubmit}>
           <h1>Faça seu cadastro</h1>
           <Input icon={FiUser} type="text" placeholder='Nome' name='name' />
           <Input icon={FiMail} type="text" placeholder='E-mail' name='email' />
