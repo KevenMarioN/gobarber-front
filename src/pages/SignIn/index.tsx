@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useCallback } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { FiLock, FiLogIn, FiMail } from 'react-icons/fi'
 import { Form } from '@unform/web';
 import * as Yup from "yup";
@@ -9,7 +9,8 @@ import logoImg from '../../assets/logo.svg';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import getValidationErros from '../../utils/getValidationErros';
-import { useAuth } from '../../hooks/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
+import { useToast } from '../../hooks/useToast';
 
 interface SignInFormData {
   email : string;
@@ -19,7 +20,7 @@ interface SignInFormData {
 const SignIn = () => {
   const formRef = useRef<FormHandles>(null);
   const { signIn,user } = useAuth();
-
+  const {addToast} = useToast();
   const handleSubmit = useCallback(
     async (data: SignInFormData): Promise<void> => {
       try {
@@ -32,7 +33,7 @@ const SignIn = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
-        signIn({
+        await signIn({
           email : data.email,
           password : data.password
         });
@@ -41,6 +42,11 @@ const SignIn = () => {
           const errors = getValidationErros(err);
           formRef.current?.setErrors(errors);
         }
+        addToast({
+          type : 'error',
+          title: 'Erro na autenticação',
+          description: 'Ocorreu um erro ao fazer login, cheque as credenciais.'
+        });
       }
     }
     , [signIn]);

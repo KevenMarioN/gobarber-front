@@ -10,6 +10,7 @@
     "@types/node": "^16.11.34",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
+    "@types/uuid": "^8.3.4",
     "@types/yup": "^0.29.13",
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",
@@ -19,8 +20,10 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.4.5",
     "styled-components": "^5.3.5",
     "typescript": "^4.6.4",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
