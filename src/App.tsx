@@ -1,21 +1,20 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import ToastContainer from './components/ToastContainer';
 import AppProvider from './hooks';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import Router from './routes';
 import GlobalStyle from './styles/global';
 
 
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <AppProvider>
-        <SignIn />
+        <Router />
       </AppProvider>
       <GlobalStyle />
-    </>
+    </BrowserRouter>
   );
 }
 
